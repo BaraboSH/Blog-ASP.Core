@@ -1,0 +1,1 @@
+export const PAGES_WITH_NAVBAR = ['stories', 'editor', 'yourStories', 'story']
