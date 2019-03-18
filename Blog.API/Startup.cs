@@ -21,6 +21,8 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
 using AutoMapper;
 using Blog.API.ViewModels.Mapping;
+using Blog.API.Notifications;
+using Microsoft.AspNetCore.SignalR;
 
 namespace Blog.API
 {
@@ -58,6 +60,19 @@ namespace Blog.API
                             Encoding.UTF8.GetBytes(Configuration.GetValue<string>("JWTSecretKey"))
                         )
                     };
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context => 
+                        {
+                            var accessToken = context.Request.Query["access_token"];
+                            var path = context.HttpContext.Request.Path;
+                            if(!string.IsNullOrEmpty(accessToken) && (path.StartsWithSegments("/notifications")))
+                            {
+                                context.Token = accessToken;
+                            }
+                            return Task.CompletedTask;
+                        }
+                    };
                 }); 
 
             services.AddScoped<IUserRepository, UserRepository>();
@@ -67,6 +82,8 @@ namespace Blog.API
 
 
             
+            services.AddSingleton<IUserIdProvider, UserIdProvider>();
+
             services.AddSingleton<IAuthService>(
                 new AuthService(
                     Configuration.GetValue<string>("JWTSecretKey"),
@@ -83,10 +100,27 @@ namespace Blog.API
                     options.SerializerSettings.Converters.Add(new StringEnumConverter());
                 });
 
+services.AddSignalR().AddJsonProtocol(options => 
+            {
+                options.PayloadSerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.PayloadSerializerSettings.Converters.Add(new StringEnumConverter());
+            });
             var mappingConfig = new MapperConfiguration(mc => 
                 mc.AddProfile(new MappingProfile())
             );
-            services.AddSingleton(mappingConfig.CreateMapper());    
+            services.AddSingleton(mappingConfig.CreateMapper());   
+             
+                        /* services.AddCors(options =>
+            {
+                // this defines a CORS policy called "default"
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("*")
+                        .AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -101,13 +135,9 @@ namespace Blog.API
             {
                 app.UseHsts();
             }
-            app.UseCors(builder => builder
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials()
-            );
+            //app.UseCors("default");
             app.UseAuthentication();
+            app.UseSignalR(routes => routes.MapHub<NotificationsHub>("/notifications"));
             app.UseMvc();
         }
     }
