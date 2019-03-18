@@ -17,3 +17,22 @@ C:\Users\Nikita\Desktop\Blog ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.
 C:\Users\Nikita\Desktop\Blog ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.csproj.CopyComplete
 C:\Users\Nikita\Desktop\Blog ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.dll
 C:\Users\Nikita\Desktop\Blog ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.pdb
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.API.deps.json
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.API.runtimeconfig.json
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.API.runtimeconfig.dev.json
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.API.dll
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.API.pdb
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.Data.dll
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.Model.dll
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.Data.pdb
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\bin\Debug\netcoreapp2.2\Blog.Model.pdb
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.csprojAssemblyReference.cache
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.csproj.CoreCompileInputs.cache
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.RazorAssemblyInfo.cache
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.RazorAssemblyInfo.cs
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.AssemblyInfoInputs.cache
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.AssemblyInfo.cs
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.RazorTargetAssemblyInfo.cache
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.csproj.CopyComplete
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.dll
+C:\Users\ntre\Desktop\BlogWithAspAndReact\Blog-ASP.Core\Blog.API\obj\Debug\netcoreapp2.2\Blog.API.pdb

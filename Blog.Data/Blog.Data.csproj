@@ -4,6 +4,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.3"/>
-    <ProjectReference Include="../Blog.Model\Blog.Model.csproj" />  
+    <ProjectReference Include="../Blog.Model\Blog.Model.csproj"/>
   </ItemGroup>
 </Project>

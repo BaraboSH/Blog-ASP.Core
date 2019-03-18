@@ -8,9 +8,14 @@ namespace Blog.API.ViewModels.Mapping
         public MappingProfile()
         {
             CreateMap<Story,StoryDetailViewModel>()
-                .ForMember(dest => dest.OwnerUsername,map => map.MapFrom(s => s.Owner.UserName));
+                .ForMember(dest => dest.OwnerUsername,map => map.MapFrom(s => s.Owner.UserName))
+                .ForMember(dest => dest.LikesNumber,map => map.MapFrom(s => s.Likes.Count))
+                .ForMember(dest => dest.Liked,map => map.Ignore());
+
             CreateMap<Story, DraftViewModel>();
-            CreateMap<Story, StoryViewModel>();    
+            CreateMap<Story, StoryViewModel>()
+                .ForMember(dest => dest.OwnerUsername,map => map.MapFrom(s => s.Owner.UserName));   
+            CreateMap<Story, OwnerStoryViewModel>();
         }
     }
 }

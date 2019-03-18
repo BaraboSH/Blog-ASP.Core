@@ -11,5 +11,7 @@ namespace Blog.API.ViewModels.Stories
         public long PublishTime { get; set; }
         public string OwnerId { get; set; }
         public string OwnerUsername { get; set; }
+        public int LikesNumber { get; set; }
+        public bool Liked { get; set; }
     }
 }

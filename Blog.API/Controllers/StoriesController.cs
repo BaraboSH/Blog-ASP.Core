@@ -28,8 +28,14 @@ namespace Blog.API.Controllers
         [HttpGet("{id}")]
         public ActionResult<StoryDetailViewModel> GetStoryDetail(string id)
         {
-            var story = _storyRepository.GetSingle(s => s.Id == id, s => s.Owner);
-            return _mapper.Map<StoryDetailViewModel>(story);
+            var story = _storyRepository.GetSingle(s => s.Id == id, s => s.Owner, s => s.Likes);
+            var userId = HttpContext.User.Identity.Name;
+            var liked = story.Likes.Exists(l => l.UserId == userId);
+
+            return _mapper.Map<Story,StoryDetailViewModel>(
+                story,
+                opt => opt.AfterMap((src,dest) => dest.Liked = liked)
+            );
         }
 
         
@@ -96,7 +102,7 @@ namespace Blog.API.Controllers
         }
 
         [HttpGet("drafts")]
-        public ActionResult<DraftsViewModel> Get() 
+        public ActionResult<DraftsViewModel> GetDrafts() 
         {
             var ownerId = HttpContext.User.Identity.Name;
 
@@ -106,11 +112,11 @@ namespace Blog.API.Controllers
             };
         }
         [HttpGet("user/{id}")]
-         public ActionResult<StoriesViewModel> Get (string id)
+         public ActionResult<OwnerStoriesViewModel> Get (string id)
          {
              var stories = _storyRepository.FindBy(s => s.OwnerId == id && !s.Draft);
-             return new StoriesViewModel {
-                 Stories = stories.Select(_mapper.Map<StoryViewModel>).ToList()
+             return new OwnerStoriesViewModel {
+                 Stories = stories.Select(_mapper.Map<OwnerStoryViewModel>).ToList()
              };
          }   
 
