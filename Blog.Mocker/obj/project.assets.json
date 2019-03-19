@@ -943,11 +943,11 @@
           "lib/netstandard1.6/System.Text.RegularExpressions.dll": {}
         }
       },
-      "System.Threading/4.0.11": {
+      "System.Threading/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.1.0",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Runtime": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Threading.dll": {}
@@ -1037,7 +1037,8 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Blog.Model": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "2.2.3"
+          "Microsoft.EntityFrameworkCore": "2.2.3",
+          "System.Collections": "4.3.0"
         },
         "compile": {
           "bin/placeholder/Blog.Data.dll": {}
@@ -1064,7 +1065,7 @@
   },
   "libraries": {
     "AutoMapper/8.0.0": {
-      "sha512": "px8ZMtIq84dxciB29V+ZYOtsRLZP4JlflDDMW13LyeRdwsnIInzlcSHSxpWmVD6U3bbOl2FeLlgomnVtm0jvXw==",
+      "sha512": "kcbje0Y71XkvzPn8k6OROZGOn2SKaWimon3Bu1WUTVoV5GTJVym+k+zQuKApyyFVRfk7bisumj/qUX4xIIXS+Q==",
       "type": "package",
       "path": "automapper/8.0.0",
       "files": [
@@ -1081,7 +1082,7 @@
       ]
     },
     "CryptoHelper/3.0.2": {
-      "sha512": "b97hwjyL675Mx7VUCvdIykieec2PVFzRUIqznov8QEk4LD2qKXsL03fnmlxXGAyhaFJDF/IeLHn0HfZgR+dqDQ==",
+      "sha512": "6xFZdEnhuOmX58TgZAeb20MbddsL8/nR/4CnWhmjMXv9gfpOxD+1bBU7IDtYq2Q8rZJUT6xYWdhW16bKriU2Mw==",
       "type": "package",
       "path": "cryptohelper/3.0.2",
       "files": [
@@ -1094,7 +1095,7 @@
       ]
     },
     "Microsoft.AspNetCore.Cryptography.Internal/2.0.1": {
-      "sha512": "zmERIuyMufMcEOf0nLM9ApgH4VHhUnFGzmrgp2mkFL5unXfzDFg7Itdq4PsKMjrBZScGt3ayN0ct7F5ttdZ1eA==",
+      "sha512": "HhsYkV/v1L+jNcAtXFpDpLUuKc8j4J612tEPEHn6/9njPWwt1CiNPUfJ8ddW8TA4jptRIv6ltZ+eUNsom9tnTw==",
       "type": "package",
       "path": "microsoft.aspnetcore.cryptography.internal/2.0.1",
       "files": [
@@ -1107,7 +1108,7 @@
       ]
     },
     "Microsoft.AspNetCore.Cryptography.KeyDerivation/2.0.1": {
-      "sha512": "rLj4xn0dwWslmk2LSrLUNlJ8pGDspj8MQ6EyLQO+saGobnGXhJa+k92d6X0w2qhZddHhLebXurRFlyKOpdkWNQ==",
+      "sha512": "wHs5PAgsQIA0WMt2I6/q/NptiLFLrFPrauq7Zo9p/zDNb3dRzpzYuhQJdT9zoq1D4LLE4ir9fcW8+Cw+mpyDBA==",
       "type": "package",
       "path": "microsoft.aspnetcore.cryptography.keyderivation/2.0.1",
       "files": [
@@ -1188,7 +1189,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.2.3": {
-      "sha512": "0VOFOuIMLE3ZA9yAWPbEe48pe+3pFi1CmyI4bh6rLtdTgCa5fa5TWqsbDCeZl13rjSoENPuOq6InYGSiKTR0+g==",
+      "sha512": "GUiOOYMUiaXK6G/RqgBgI2NsHJLKSFrHuOVnpXQrC7VgmFGG7sFyQmh/j5cMJT5XeGCymNY3wnDlewZ1GEFYJg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.2.3",
       "files": [
@@ -1201,7 +1202,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.2.3": {
-      "sha512": "75qgcAJOIJrNtxeYkhQx8O2goAYkb/u7r1tQOk8Xs5YjAf39zkeNfl9QRBS0GIDtffD/wGpq7jJrMS/dN3TUfQ==",
+      "sha512": "89dSjkZmLVnsbIoiQyMDdMBakTrgiY+1mfu4MRfWRX1ysSx+nGfcPPZ8QfRKLq+i7EIqylUNVJSHi7bHTwL9LQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.2.3",
       "files": [
@@ -1214,7 +1215,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.2.3": {
-      "sha512": "AktkwwjsxeM5+CUOVKz2E/zQvEyFCaTSokbqJx643pSEckjReIDgCqgUV8rvZsGPpPm/RXIhhOXDrB/a+BEkXA==",
+      "sha512": "+7DQd8xaq1kh2szcVkMJAN4/TvjFt5gK4fIsRHcPvZrc10p9Rhhitd44xGTGs9e0RRVijz0+OVI7jPvKaVfwAQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.2.3",
       "files": [
@@ -1226,7 +1227,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Design/2.2.3": {
-      "sha512": "ieO8DTCxp5fe39pv0C8UljOqRVyeYgNNB52vkwYyTIZdPnjEVbTot4GsubHy3JspmvG09uYgU64Ll9/LYDjkiA==",
+      "sha512": "EdKCRSAlVF0PLXl1vi5ojRh0jRhSDywPYN9+0UpKOBZ53Vpa+8Qyio6p9WMJNqp+LkXS5fRQshHuiljFTVGY/g==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.design/2.2.3",
       "files": [
@@ -1243,7 +1244,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/2.2.3": {
-      "sha512": "addZBOfkWf/6ZkWAs/eJMu25iFUiqSHJKmETRfrI2XqzgBZwYgV5DxgmqkhMXgkjZ9prgZ9uD6I6pwQXJTbIqQ==",
+      "sha512": "gwB+FOVqI+lwTl9MCtH5iI6Zfes0JlCDBuxCQ3ngLMzSqFFzgLANmmgA/cl+D2WOZ01TXivpRSzNMrnDfOJljA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/2.2.3",
       "files": [
@@ -1256,7 +1257,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools/2.2.3": {
-      "sha512": "p0MeXtESRNYKhQXWSnODoI3aQQYgZT5XVo1KDuXOsAyPtAbe0QGwXm4efGE4F1FqfaRU8wGsHRsk3V0E9zQFPw==",
+      "sha512": "wDJ0kTajnmdtLNqCpBlmMxEZT1+ETwWMjZKQNZIIKZ1WUvb16h35iGUucvSz8EF1QqIb8X/c9xg7usDJgykWhQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.tools/2.2.3",
       "hasTools": true,
@@ -1414,7 +1415,7 @@
       ]
     },
     "Microsoft.Extensions.Primitives/2.2.0": {
-      "sha512": "vpH+o7f8obVx65PiEtBXxTwL5RosK60fNIMy/y8WGE4/r4IvAqQGukOzMhxsp//Accvd7kmukyQTVkqVYdaDyA==",
+      "sha512": "Sv8EDHvN2852bE5G1yosKCa7sUw/x0Z/rCaI5LIWHseAXprG1h9oberAh3NRBO7w2zTZq79WPeQDMsPBVSf99w==",
       "type": "package",
       "path": "microsoft.extensions.primitives/2.2.0",
       "files": [
@@ -1692,7 +1693,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.2.0": {
-      "sha512": "OK/H8p9Ig6mLMITjXJ4VOewrJg/TU+dAPHE4BdMWMv+8COzBehf7XF1+DofKkmqdHpO2cJoS5Sc9PEZ6PKCbsg==",
+      "sha512": "qIrVLupwT2NYTrf7KM7Nh+mJr36V5MITVRjyGOByVVCwGmQgQmI/6bjZYQv+QdExi4Cm87eCKJX9FdT6nc00Xg==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.2.0",
       "files": [
@@ -1767,7 +1768,7 @@
       ]
     },
     "Microsoft.SyndicationFeed.ReaderWriter/1.0.2": {
-      "sha512": "1j5wDqmw952zlPK/SHoMCtOGMCr1xe48meZuxhkgiksvtZ2rTI4pOPteuk92TVdFtdCauYMsqFyYSyyhp3SBUw==",
+      "sha512": "o3F/WrKcVpcGYcVJeCTMfP0PLMl+uh7ndBQz9PBE6YvcJiSFj1/hbcqeiV8bAkFN8GMYT74398csaFoz6mfGIg==",
       "type": "package",
       "path": "microsoft.syndicationfeed.readerwriter/1.0.2",
       "files": [
@@ -1907,7 +1908,7 @@
       ]
     },
     "Npgsql/4.0.4": {
-      "sha512": "h4lXWu8Xqogo+talX4ZtDtsrWyZPuRp+77BrpoJcfbIGFSGJg45dMUasytf/1WuKh/BRE3O8E3lKRtR2L9aPAQ==",
+      "sha512": "Wkq6mN0cpIvqtXEwk4szCSTxsLyfYjOrRrL1rHRUuopYztkg3F1Pda2hrfCOHphGXiqbkLnW9OS0SYrx6cJYHQ==",
       "type": "package",
       "path": "npgsql/4.0.4",
       "files": [
@@ -1927,7 +1928,7 @@
       ]
     },
     "Npgsql.EntityFrameworkCore.PostgreSQL/2.2.0": {
-      "sha512": "/dj1Mwsvy3IJdmep7qeyD0TdT07QOLiYBA170xbxY9bSqUawONhu5sPeRv+GxzgoEtqyX5IJqiopjVxdyiMWOg==",
+      "sha512": "gUHdEtuJ8JR//bLMBzsu6WZOO858Jfli1BEoMcEv3ehgcU4ibdwEXUNt2b0Xs0MJmZ031wTDGasmdFEXH2KAjw==",
       "type": "package",
       "path": "npgsql.entityframeworkcore.postgresql/2.2.0",
       "files": [
@@ -2028,7 +2029,7 @@
       ]
     },
     "System.Collections.Immutable/1.5.0": {
-      "sha512": "RGxi2aQoXgZ5ge0zxrKqI4PU9LrYYoLC+cnEnWXKsSduCOUhE1GEAAoTexUVT8RZOILQyy1B27HC8Xw/XLGzdQ==",
+      "sha512": "T5XGQlcHhEO75Qx38GGCUDPdk4n/7yrRmTgy4yczzJV8alPHaxPU55TBC2UFrkQ42bu34sZPfK0dU+nWZUOEJA==",
       "type": "package",
       "path": "system.collections.immutable/1.5.0",
       "files": [
@@ -2687,7 +2688,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "j05k6PApfgkhk2QER1/6ntYs95bDbRohD6giPXRPTrRQeXbgWVIArUJ9cjfLpF9HqMeGTOvlS3Cuot7KCFsbAw==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -2954,12 +2955,11 @@
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.3.0": {
-      "sha512": "+rD+UzHYxfXsT+YrMI0njdFaP/o1cnmSnRWy4os/NaWJC7FyCHrCOwiAKUwz+smQ3cPKZ8pAAv5zM5DDBG4K4w==",
+      "sha512": "59tBslAk9733NXLrUJrwNZEzbMAcu8k344OYo+wfSVygcgZ9lgBdGIzH/nrg3LYhXceynyvTc8t5/GD4Ri0/ng==",
       "type": "package",
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -3793,10 +3793,10 @@
         "system.text.regularexpressions.nuspec"
       ]
     },
-    "System.Threading/4.0.11": {
-      "sha512": "N+3xqIcg3VDKyjwwCGaZ9HawG9aC6cSDI+s7ROma310GQo8vilFZa86hqKppwTHleR/G0sfOzhvgnUxWCR/DrQ==",
+    "System.Threading/4.3.0": {
+      "sha512": "VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "type": "package",
-      "path": "system.threading/4.0.11",
+      "path": "system.threading/4.3.0",
       "files": [
         ".nupkg.metadata",
         "ThirdPartyNotices.txt",
@@ -3859,7 +3859,7 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
         "runtimes/aot/lib/netcore50/System.Threading.dll",
-        "system.threading.4.0.11.nupkg.sha512",
+        "system.threading.4.3.0.nupkg.sha512",
         "system.threading.nuspec"
       ]
     },
@@ -4106,27 +4106,28 @@
       "Blog.Model >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.SyndicationFeed.ReaderWriter >= 1.0.2",
-      "System.Collections >= 4.3.0"
+      "System.Collections >= 4.3.0",
+      "System.Threading >= 4.3.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ntre\\.nuget\\packages\\": {},
+    "C:\\Users\\Nikita\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
+      "projectUniqueName": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
       "projectName": "Blog.Mocker",
-      "projectPath": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
-      "packagesPath": "C:\\Users\\ntre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Mocker\\obj\\",
+      "projectPath": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
+      "packagesPath": "C:\\Users\\Nikita\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Mocker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ntre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nikita\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4139,11 +4140,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.API\\Blog.API.csproj": {
-              "projectPath": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.API\\Blog.API.csproj"
+            "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.API\\Blog.API.csproj": {
+              "projectPath": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.API\\Blog.API.csproj"
             },
-            "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Model\\Blog.Model.csproj": {
-              "projectPath": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Model\\Blog.Model.csproj"
+            "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Model\\Blog.Model.csproj": {
+              "projectPath": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Model\\Blog.Model.csproj"
             }
           }
         }
@@ -4168,6 +4169,10 @@
             "version": "[1.0.2, )"
           },
           "System.Collections": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.Threading": {
             "target": "Package",
             "version": "[4.3.0, )"
           }

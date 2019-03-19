@@ -12,12 +12,27 @@ namespace Blog.Data
        {
            foreach (var relationship in modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys()))
            {
-              relationship.DeleteBehavior = DeleteBehavior.Restrict; 
+              relationship.DeleteBehavior = DeleteBehavior.SetNull; 
            }
            modelBuilder.Entity<Story>()
             .HasOne(s => s.Owner)
             .WithMany(u => u.Stories)
             .HasForeignKey(s => s.OwnerId);
+
+            modelBuilder.Entity<Like>()
+            .HasKey(l => new{l.StoryId,l.UserId});
+
+            modelBuilder.Entity<Like>()
+            .HasOne(s => s.Story)
+            .WithMany(i => i.Likes)
+            .HasForeignKey(x => x.StoryId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Like>()
+            .HasOne(s => s.User)
+            .WithMany(i => i.Likes)
+            .HasForeignKey(x => x.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
        }
 
     }

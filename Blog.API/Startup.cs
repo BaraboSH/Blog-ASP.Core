@@ -62,18 +62,26 @@ namespace Blog.API
                     };
                     options.Events = new JwtBearerEvents
                     {
-                        OnMessageReceived = context => 
+                        OnMessageReceived = context =>
                         {
                             var accessToken = context.Request.Query["access_token"];
+
+                            // If the request is for our hub...
                             var path = context.HttpContext.Request.Path;
-                            if(!string.IsNullOrEmpty(accessToken) && (path.StartsWithSegments("/notifications")))
+                            if (!string.IsNullOrEmpty(accessToken) && (path.StartsWithSegments("/notifications")))
                             {
+                                // Read the token out of the query string
                                 context.Token = accessToken;
                             }
                             return Task.CompletedTask;
                         }
                     };
-                }); 
+                });
+
+            var mappingConfig = new MapperConfiguration(mc => 
+                mc.AddProfile(new MappingProfile())
+            );
+            services.AddSingleton(mappingConfig.CreateMapper());   
 
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IStoryRepository, StoryRepository>();
@@ -82,7 +90,6 @@ namespace Blog.API
 
 
             
-            services.AddSingleton<IUserIdProvider, UserIdProvider>();
 
             services.AddSingleton<IAuthService>(
                 new AuthService(
@@ -99,28 +106,15 @@ namespace Blog.API
                     options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                     options.SerializerSettings.Converters.Add(new StringEnumConverter());
                 });
-
-services.AddSignalR().AddJsonProtocol(options => 
+            services.AddSignalR().AddJsonProtocol(options =>
             {
                 options.PayloadSerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 options.PayloadSerializerSettings.Converters.Add(new StringEnumConverter());
             });
-            var mappingConfig = new MapperConfiguration(mc => 
-                mc.AddProfile(new MappingProfile())
-            );
-            services.AddSingleton(mappingConfig.CreateMapper());   
+            services.AddSingleton<IUserIdProvider, UserIdProvider>();
              
-                        /* services.AddCors(options =>
-            {
-                // this defines a CORS policy called "default"
-                options.AddPolicy("default", policy =>
-                {
-                    policy.WithOrigins("*")
-                        .AllowAnyOrigin()
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
-                });
-            });*/
+             
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -135,7 +129,12 @@ services.AddSignalR().AddJsonProtocol(options =>
             {
                 app.UseHsts();
             }
-            //app.UseCors("default");
+            app.UseCors(builder => builder
+                .WithOrigins("http://localhost:3000")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+            ); 
             app.UseAuthentication();
             app.UseSignalR(routes => routes.MapHub<NotificationsHub>("/notifications"));
             app.UseMvc();

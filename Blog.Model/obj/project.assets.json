@@ -70,7 +70,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -473,23 +473,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ntre\\.nuget\\packages\\": {},
+    "C:\\Users\\Nikita\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Model\\Blog.Model.csproj",
+      "projectUniqueName": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Model\\Blog.Model.csproj",
       "projectName": "Blog.Model",
-      "projectPath": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Model\\Blog.Model.csproj",
-      "packagesPath": "C:\\Users\\ntre\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Model\\obj\\",
+      "projectPath": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Model\\Blog.Model.csproj",
+      "packagesPath": "C:\\Users\\Nikita\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ntre\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nikita\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

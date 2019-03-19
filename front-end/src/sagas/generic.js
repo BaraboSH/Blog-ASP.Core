@@ -67,8 +67,8 @@ function* listenNotifications() {
   
     const channel = yield call(getEventChannel, connection)
     while(true) {
-      const { notificationType, payload } = yield take(channel)
-      const message = `${payload.username} ${notificationType.toLowerCase()}d "${payload.storyTitle}"`
+      const { notificationType, payload } = yield take(channel)      
+      const message = `${payload.userName} ${notificationType.toLowerCase()}d "${payload.storyTitle}"`
       yield put(toggleSnackbar(message))
     }
   }
