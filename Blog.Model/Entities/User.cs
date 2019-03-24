@@ -18,5 +18,6 @@ namespace Blog.Model.Entities
         public string Password { get; set; }
         public ICollection<Story> Stories { get; set; }
         public ICollection<Like> Likes { get; set; }
+        public List<Share> Shares { get; set; }
     }
 }

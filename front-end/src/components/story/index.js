@@ -45,7 +45,7 @@ export default connectTo(
         <ContentContainer>
           <Info>
             <Typography variant="subheading" gutterBottom>
-              author: {ownerUsername}
+              Автор: {ownerUsername}
             </Typography>
             <Typography variant="body1" gutterBottom>
               {timestampForHuman(publishTime)}

@@ -4,7 +4,7 @@ import { delay, eventChannel } from 'redux-saga';
 import { TICK } from '../constants/generic'
 import { tick as tickAction, toggleSnackbar } from '../actions/generic';
 import { SAVE_PERIOD } from '../constants/editor';
-import { save, clear as clearEditor } from '../actions/editor';
+import { save, clear as clearEditor, updateStory } from '../actions/editor';
 import { clear as clearYourStories } from '../actions/your-stories'
 import { receiveStory } from '../actions/story'
 import { receiveStories } from '../actions/stories'
@@ -67,9 +67,19 @@ function* listenNotifications() {
   
     const channel = yield call(getEventChannel, connection)
     while(true) {
-      const { notificationType, payload } = yield take(channel)      
-      const message = `${payload.userName} ${notificationType.toLowerCase()}d "${payload.storyTitle}"`
-      yield put(toggleSnackbar(message))
+      const { notificationType, payload } = yield take(channel)
+      if (['LIKE', 'UNLIKE'].includes(notificationType)) {
+        const message = `${payload.userName} ${notificationType.toLowerCase()==='like'?'поставил лайк':'убрал лайк'} "${payload.storyTitle}"`
+        yield put(toggleSnackbar(message))
+      } else if (notificationType === 'SHARE') {
+        const message = `${payload.username} поделился с вами доступом к статьи: "${payload.storyTitle}"`
+        yield put(toggleSnackbar(message))
+      } else if (notificationType === 'STORY_EDIT') {
+        const { navigation, editor } = yield select()
+        if (navigation.page === 'editor' && editor.storyId === payload.id) {
+          yield put(updateStory(payload))
+        }
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-export const BACKEND = "http://localhost:5000/api/"
+export const BACKEND = 'http://localhost:5000/api/'
 
 const AUTH = `${BACKEND}auth/`
 export const LOGIN = `${AUTH}login`
@@ -13,5 +13,7 @@ export const PUBLISH_STORY = storyId => `${STORIES}${storyId}/publish`
 export const USER_STORIES = userId => `${STORIES}user/${userId}`
 export const STORY_DETAIL = storyId => `${STORIES}${storyId}`
 export const DRAFTS = `${STORIES}drafts`
+export const SHARED = `${STORIES}shared`
 export const TOGGLE_LIKE = storyId => `${STORIES}${storyId}/toggleLike`
+export const SHARE = storyId => `${STORIES}${storyId}/share`
 

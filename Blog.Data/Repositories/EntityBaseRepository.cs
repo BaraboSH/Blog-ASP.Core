@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 namespace Blog.Data.Repositories
 {
     public class EntityBaseRepository<T> : IEntityBaseRepository<T>
-            where T: class, IEntityBase, new()
+            where T: class
     {
-        private BlogContext _context;
+        protected BlogContext _context;
         public EntityBaseRepository(BlogContext context)
         {
             _context = context;
@@ -66,11 +66,6 @@ namespace Blog.Data.Repositories
         public virtual IEnumerable<T> GetAll()
         {
             return _context.Set<T>().AsEnumerable();
-        }
-
-        public virtual T GetSingle(string id)
-        {
-            return _context.Set<T>().FirstOrDefault(x => x.Id == id); 
         }
 
         public virtual T GetSingle(Expression<Func<T,bool>> predicate)

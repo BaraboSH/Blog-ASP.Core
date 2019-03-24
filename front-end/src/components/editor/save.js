@@ -9,10 +9,10 @@ export default connectTo(
   actions,
   ({ changesSaved, save }) => {
     return changesSaved ? (
-      <p>Saved</p>
+      <p>Сохранено</p>
     ) : (
       <Button variant='outlined' onClick={save}>
-        Save
+        Сохранить
       </Button>
     )
   }

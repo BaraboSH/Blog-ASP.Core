@@ -15,13 +15,13 @@ const Container = styled.div`
 export default connectTo(
   state => state.editor,
   actions,
-  ({ changeTitle, title }) => (
+  ({ title, changeTitle}) => (
     <Container>
       <TextField
         style={{ width: 320 }}
         onChange={({ target: { value } }) => changeTitle(value)}
         value={title}
-        label='Title'
+        label='Название'
       />
     </Container>
   )
