@@ -8,6 +8,11 @@ namespace Blog.Model.Entities
     [Table("Story")]
     public class Story : IEntityBase
     {
+        public Story()
+        {
+            Likes = new List<Like>();
+            Shares = new List<Share>();
+        }
         public string Id { get; set ; }
         [MaxLength(100)]
         public string Title { get; set; }
@@ -21,5 +26,6 @@ namespace Blog.Model.Entities
         public string OwnerId { get; set; }
         public User Owner  { get; set; }
         public List<Like> Likes { get; set; }
+        public List<Share> Shares { get; set; }
     }
 }

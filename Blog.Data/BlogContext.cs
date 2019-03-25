@@ -33,6 +33,18 @@ namespace Blog.Data
             .WithMany(i => i.Likes)
             .HasForeignKey(x => x.UserId)
             .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Share>()
+            .HasOne(s => s.User)
+            .WithMany(u => u.Shares)
+            .HasForeignKey(s => s.UserId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Share>()
+            .HasOne(s => s.Story)
+            .WithMany(s => s.Shares)
+            .HasForeignKey(s => s.StoryId)
+            .OnDelete(DeleteBehavior.Restrict);
        }
 
     }

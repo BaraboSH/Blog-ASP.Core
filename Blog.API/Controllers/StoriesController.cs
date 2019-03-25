@@ -10,6 +10,7 @@ using System.Linq;
 using Blog.API.Notifications.Models;
 using Microsoft.AspNetCore.SignalR;
 using Blog.API.Notifications;
+using Blog.API.ViewModels.Shares;
 
 namespace Blog.API.Controllers
 {
@@ -21,13 +22,15 @@ namespace Blog.API.Controllers
         IStoryRepository _storyRepository;
         ILikeRepository _likeRepository;
         IUserRepository _userRepository;
+        IShareRepository _shareRepository;
         IHubContext<NotificationsHub> _hubContext;
         IMapper _mapper;
-        public StoriesController(IStoryRepository storyRepository,ILikeRepository likeRepository,IUserRepository userRepository,IHubContext<NotificationsHub> hubContext, IMapper mapper)
+        public StoriesController(IStoryRepository storyRepository,ILikeRepository likeRepository,IUserRepository userRepository,IShareRepository shareRepository,IHubContext<NotificationsHub> hubContext, IMapper mapper)
         {
             _storyRepository = storyRepository;
             _likeRepository = likeRepository;
             _userRepository = userRepository;
+            _shareRepository = shareRepository;
             _hubContext = hubContext;
             _mapper = mapper;
         }
@@ -80,7 +83,7 @@ namespace Blog.API.Controllers
             var ownerId = HttpContext.User.Identity.Name;
             if(!_storyRepository.IsOwner(id, ownerId)) return Forbid("Вы не владелец этой статьи");
 
-            var newStory = _storyRepository.GetSingle(id);
+            var newStory = _storyRepository.GetSingle(s => s.Id == id);
             newStory.Title = model.Title;
             newStory.Content = model.Content;
             newStory.Tags = model.Tags;
@@ -98,7 +101,7 @@ namespace Blog.API.Controllers
             var ownerId = HttpContext.User.Identity.Name;
             if(!_storyRepository.IsOwner(id, ownerId)) return Forbid("Вы не владелец этой статьи");
 
-            var newStory = _storyRepository.GetSingle(id);
+            var newStory = _storyRepository.GetSingle(s => s.Id == id);
             newStory.Draft = false;
             newStory.PublishTime = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
             
@@ -147,7 +150,7 @@ namespace Blog.API.Controllers
             var story = _storyRepository.GetSingle(s => s.Id == id, s => s.Likes);
             if(userId == story.OwnerId) return BadRequest("Нельзя лайкнуть свою запись");
 
-            var user = _userRepository.GetSingle(userId);
+            var user = _userRepository.GetSingle(u => u.Id == userId);
             var existingLike = story.Likes.Find(l => l.UserId == userId);
             var payload = new LikeRelatedPayload
             {
@@ -193,6 +196,63 @@ namespace Blog.API.Controllers
             var stories = _storyRepository.AllIncluding(s => s.Owner);
             return new StoriesViewModel {
                 Stories = stories.Select(_mapper.Map<StoryViewModel>).ToList()
+            };
+        }
+
+        [HttpPost("{id}/share")]
+        public ActionResult Share(string id, [FromBody]ShareViewModel model)
+        {
+            var ownerId = HttpContext.User.Identity.Name;
+            if(!_storyRepository.IsOwner(id,ownerId)) return Forbid("Это не ваша статья");
+            var userToShare = _userRepository.GetSingle(u => u.UserName == model.UserName);
+            if(userToShare == null)
+            {
+                return BadRequest(new {username = "Нету пользователя с таким именем"});
+            }
+            var owner = _userRepository.GetSingle(u => u.Id == ownerId);
+            var story = _storyRepository.GetSingle(s => s.Id == id, s => s.Shares);
+            if(story.OwnerId == ownerId)
+            {
+                return BadRequest("Вы не можете делиться статьей с самим собой");
+            }
+            var existingShare = story.Shares.Find(l => l.UserId == userToShare.Id);
+            if(existingShare == null)
+            {
+                _shareRepository.Add(
+                    new Share
+                    {
+                        StoryId = id,
+                        UserId = userToShare.Id
+                    }
+                );
+                _shareRepository.Commit();
+                _hubContext.Clients.User(userToShare.Id).SendAsync(
+                    "notification",
+                    new Notification<ShareRelatedPayload>
+                    {
+                        NotificationType = NotificationType.SHARE,
+                        Payload = new ShareRelatedPayload {UserName = owner.UserName,StoryTitle = story.Title}
+                    }
+                );
+            }
+            return NoContent();
+        }
+        [HttpGet("shared")]
+        public ActionResult<SharedDraftsViewModel> GetSharedToYouDrafts()
+        {
+            var userId = HttpContext.User.Identity.Name;
+            var stories = _shareRepository.StoriesSharedToUser(userId).Where(s => s.Draft);
+            var usernames = stories.Select(s => s.Owner.UserName).Distinct().ToList();
+            return new SharedDraftsViewModel
+            {
+                UsersDrafts = usernames.Select(username => new UserDrafts 
+                {
+                    Username = username,
+                    Drafts = stories
+                    .Where(s => s.Owner.UserName == username)
+                    .Select(_mapper.Map<DraftViewModel>)
+                    .ToList()
+                }).ToList()    
             };
         }
     }

@@ -11,7 +11,7 @@ namespace Blog.Data.Repositories
 
         public bool IsOwner(string storyId, string userId)
         {
-            var story = this.GetSingle(storyId);
+            var story = this.GetSingle(s => s.Id == storyId, s => s.Shares);
             return story.OwnerId == userId;
         }
     }
