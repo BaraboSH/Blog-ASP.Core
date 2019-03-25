@@ -32,7 +32,7 @@ export default ({ title , dateText, onClick, ownerUsername, tags }) => {
           ))}
         </TagsContainer>
         <Typography style={{ marginBottom: 16, fontSize: 14 }}>
-          written by {ownerUsername}
+          Написана {ownerUsername}
         </Typography>
       </CardContent>
     </StoryCardContainer>

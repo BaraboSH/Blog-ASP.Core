@@ -26,7 +26,7 @@ export default connectTo(
           name="email"
           key="email"
           component={TextField}
-          label="Email"
+          label="Электронная почта"
           type="text"
           validate={[required, email]}
         />,
@@ -34,7 +34,7 @@ export default connectTo(
           name="username"
           key="username"
           component={TextField}
-          label="Username"
+          label="Имя пользователя"
           type="text"
           validate={[required, minLenght4]}
         />,
@@ -42,7 +42,7 @@ export default connectTo(
           name="password"
           key="password"
           component={TextField}
-          label="Password"
+          label="Пароль"
           type="password"
           validate={[required, minLength6, lengthLessThan40]}
         />
@@ -53,9 +53,9 @@ export default connectTo(
           handleSubmit={handleSubmit}
           enabledSubmit={enabledSubmit}
           onSubmit={submitRegister}
-          submitText='Register'
+          submitText='Регистрация'
           onBottomTextClick={() => to('login')}
-          bottomText="Already have an account? Login"
+          bottomText="Уже есть аккаунт? Залогинься"
         />
       )
     }

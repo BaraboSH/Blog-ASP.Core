@@ -33,10 +33,10 @@ export default connectTo(
       </DialogContent>
       <DialogActions>
         <Button onClick={exitLinkPrompt} color='primary'>
-          Cancel
+          Выйти
         </Button>
         <Button onClick={submitLink} color='primary'>
-          Submit
+          Подтвердить
         </Button>
       </DialogActions>      
     </Dialog>

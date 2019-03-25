@@ -27,7 +27,7 @@ class PageWrapper extends React.Component {
       handlers,
       stateReceived,
       page,
-      documentTitle = 'Simple Blog',
+      documentTitle = 'Айти блог',
       style
     } = this.props
     this.page = page

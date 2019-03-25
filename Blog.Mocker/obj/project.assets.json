@@ -1248,7 +1248,11 @@
       ]
     },
     "Microsoft.AspNetCore.Http.Extensions/2.2.0": {
+<<<<<<< HEAD
       "sha512": "lyEExtXdag+/tGhJVJgU6s2LOEUO3Uex4bDjN2RWuOYPe0l4rTDFv8B1WJO3EnnFrcCbbhATEc+3y3ntzSZKqw==",
+=======
+      "sha512": "wXfB68sp3X+6/TLUHVF5eiscn9iGptGEwjJyk4yBbbOAVJECE59/KUun6sT+JlNcNCWEWE0S7Ew+yMD6bm3rrQ==",
+>>>>>>> 4444a3893692f5077143faea122b4b6522ac1be8
       "type": "package",
       "path": "microsoft.aspnetcore.http.extensions/2.2.0",
       "files": [
@@ -3920,7 +3924,11 @@
       ]
     },
     "System.Text.Encodings.Web/4.5.0": {
+<<<<<<< HEAD
       "sha512": "aGaXMErXX1ZOgZJHzNv8y+XvXX5W7rWOtmDdLMHcFKeQ5t18cSmjkAnmDoglU+2Z0FJCkE3SG6uapsqM8FIq0g==",
+=======
+      "sha512": "JF+wDdfFiRl3rz3dPMfR6aR568AW2J5CUMmhSflgHDz4zbVK4/00ax8UHnHyEMvblPewgNugjuA4oyoL8Pex2g==",
+>>>>>>> 4444a3893692f5077143faea122b4b6522ac1be8
       "type": "package",
       "path": "system.text.encodings.web/4.5.0",
       "files": [
@@ -4332,6 +4340,7 @@
     ".NETCoreApp,Version=v2.2": [
       "Blog.API >= 1.0.0",
       "Blog.Model >= 1.0.0",
+      "Microsoft.EntityFrameworkCore >= 2.2.3",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.SyndicationFeed.ReaderWriter >= 1.0.2",
       "System.Collections >= 4.3.0",
@@ -4345,11 +4354,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
       "projectName": "Blog.Mocker",
       "projectPath": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
       "packagesPath": "C:\\Users\\ntre\\.nuget\\packages\\",
       "outputPath": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Mocker\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
+      "projectName": "Blog.Mocker",
+      "projectPath": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Mocker\\Blog.Mocker.csproj",
+      "packagesPath": "C:\\Users\\Nikita\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Mocker\\obj\\",
+>>>>>>> 4444a3893692f5077143faea122b4b6522ac1be8
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4368,11 +4385,19 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
+<<<<<<< HEAD
             "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.API\\Blog.API.csproj": {
               "projectPath": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.API\\Blog.API.csproj"
             },
             "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Model\\Blog.Model.csproj": {
               "projectPath": "c:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.Model\\Blog.Model.csproj"
+=======
+            "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.API\\Blog.API.csproj": {
+              "projectPath": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.API\\Blog.API.csproj"
+            },
+            "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Model\\Blog.Model.csproj": {
+              "projectPath": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Model\\Blog.Model.csproj"
+>>>>>>> 4444a3893692f5077143faea122b4b6522ac1be8
             }
           }
         }
@@ -4386,6 +4411,10 @@
     "frameworks": {
       "netcoreapp2.2": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[2.2.3, )"
+          },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",

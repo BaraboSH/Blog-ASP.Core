@@ -49,9 +49,9 @@ const Navbar = ({ to, unauthorizeUser, dropdownOpen, dropdownAnchor, toggleDropd
             open={dropdownOpen}
             onClose={toggleDropdown}
           >
-            <MenuItem onClick={itemHandler(unauthorizeUser)}>Sign out</MenuItem>
-            <MenuItem onClick={itemHandler(() => to('editor'))}>New story</MenuItem>
-            <MenuItem onClick={itemHandler(() => to('yourStories'))}>Stories</MenuItem>
+            <MenuItem onClick={itemHandler(unauthorizeUser)}>Выйти</MenuItem>
+            <MenuItem onClick={itemHandler(() => to('editor'))}>Новая статья</MenuItem>
+            <MenuItem onClick={itemHandler(() => to('yourStories'))}>Статьи</MenuItem>
           </Menu>
         </div>
       </StyledToolbar>

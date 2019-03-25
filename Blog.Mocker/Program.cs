@@ -54,7 +54,7 @@ namespace Blog.Mocker
             var pack = await medium.GetPack(MEDIUM_USERS);
 
             var contextOptions = new DbContextOptionsBuilder<BlogContext>()
-                .UseNpgsql("Server=localhost;Port=5432;Database=blog;Username=blogadmin;Password=12345")
+                .UseNpgsql("Server=localhost;Port=5434;Database=blog;Username=blogadmin;Password=12345")
                 .Options;
             var blogContext = new BlogContext(contextOptions);
 

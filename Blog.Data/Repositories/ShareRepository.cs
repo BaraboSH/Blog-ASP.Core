@@ -8,7 +8,9 @@ namespace Blog.Data.Repositories
 {
     public class ShareRepository : EntityBaseRepository<Share>, IShareRepository
     {
-        public ShareRepository(BlogContext context):base(context){}
+        public ShareRepository(BlogContext context) : base(context)
+        {
+        }
 
         public List<Story> StoriesSharedToUser(string userId)
         {

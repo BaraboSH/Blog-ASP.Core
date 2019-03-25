@@ -16,7 +16,7 @@ export default connectTo(
       <StoriesContainer>
         {_.sortBy(stories, ['publishTime']).reverse().map((story, number) => {
           const date = timestampForHuman(story.publishTime)
-          const dateText = `Published on ${date}`
+          const dateText = `Выпущена ${date}`
 
           return (
             <StoryCard

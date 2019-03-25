@@ -33,7 +33,7 @@ export default connectTo(
       aria-labelledby="form-dialog-tags"
     >
       <DialogTitle id="form-dialog-tags">
-        Add or change tags (up to {TAGS_LIMIT}) so readers know what your story is about
+       Добавьте или измените закладку (до {TAGS_LIMIT} штук) так чтобы читатель знал о чем она
       </DialogTitle>
       <DialogContent>
         {tags.length < 5 && (
@@ -41,14 +41,14 @@ export default connectTo(
             <TextField
               autoFocus
               margin="dense"
-              label="Tag"
+              label="Закладка"
               type="text"
               fullWidth
               value={editingTag}
               onChange={({ target: { value } }) => editTag(value)}
             />
             <Button onClick={submitTag} size='small' variant='outlined' color='primary'>
-              Add
+              Добавить
             </Button>
           </InputLine>
         )}
@@ -66,7 +66,7 @@ export default connectTo(
       </DialogContent>
       <DialogActions>
         <Button style={{ margin: 'auto' }} color='primary' variant='contained' onClick={publish}>
-          Publish
+          Опубликовать
         </Button>
       </DialogActions>
     </Dialog>

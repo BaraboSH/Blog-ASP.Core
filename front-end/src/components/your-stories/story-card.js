@@ -18,12 +18,12 @@ export default ({ title , dateText, onEdit, onDelete, onClick }) => {
       <CardActions>
         { onEdit && (
           <Button onClick={noPropogation(onEdit)} size='small' variant='outlined'>
-            Edit
+            Редактировать
           </Button>
         )}
         { onDelete && (
           <Button onClick={noPropogation(onDelete)} size='small' variant='contained' color='primary'>
-            Delete
+            Удалить
           </Button>
         )}
       </CardActions>

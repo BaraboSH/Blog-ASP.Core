@@ -35,16 +35,18 @@ namespace Blog.Data
             .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Share>()
-            .HasOne(s => s.User)
-            .WithMany(u => u.Shares)
-            .HasForeignKey(s => s.UserId)
-            .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Share>()
             .HasOne(s => s.Story)
             .WithMany(s => s.Shares)
             .HasForeignKey(s => s.StoryId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .OnDelete(DeleteBehavior.Cascade);
+            
+            modelBuilder.Entity<Share>()
+            .HasOne(s => s.User)
+            .WithMany(s => s.Shares)
+            .HasForeignKey(s => s.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Share>().HasKey(s => new{s.StoryId, s.UserId});
        }
 
     }

@@ -33,7 +33,7 @@ export default connectTo(
       <Editor
         style={{ paddingTop: '20px', height: '100%' }}
         autoFocus
-        placeholder="Type your story here."
+        placeholder="Пиши свою статью сюда"
         value={content}
         schema={schema}
         onChange={({ value }) => changeContent(value)}

@@ -32,6 +32,19 @@ namespace Blog.API.Migrations
                     b.ToTable("Like");
                 });
 
+            modelBuilder.Entity("Blog.Model.Entities.Share", b =>
+                {
+                    b.Property<string>("StoryId");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("StoryId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Share");
+                });
+
             modelBuilder.Entity("Blog.Model.Entities.Story", b =>
                 {
                     b.Property<string>("Id")
@@ -91,6 +104,19 @@ namespace Blog.API.Migrations
 
                     b.HasOne("Blog.Model.Entities.User", "User")
                         .WithMany("Likes")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Blog.Model.Entities.Share", b =>
+                {
+                    b.HasOne("Blog.Model.Entities.Story", "Story")
+                        .WithMany("Shares")
+                        .HasForeignKey("StoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Blog.Model.Entities.User", "User")
+                        .WithMany("Shares")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

@@ -8,4 +8,4 @@ const Logo = styled.h1`
   font-family: 'Dancing Script', cursive;
 `
 
-export default ({ onClick }) => <Logo onClick={onClick} clickable={Boolean(onClick)}>Simple Blog</Logo>
+export default ({ onClick }) => <Logo onClick={onClick} clickable={Boolean(onClick)}>Айти блог</Logo>

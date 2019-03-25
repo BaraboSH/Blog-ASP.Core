@@ -10,7 +10,7 @@ export default connectTo(
   ({ toggleTagsMenu }) => {
     return (
       <Button variant='contained' color='primary' onClick={toggleTagsMenu}>
-        Publish
+        Опубликовать
       </Button>
     )
   }

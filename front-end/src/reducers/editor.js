@@ -5,6 +5,8 @@ import * as a from '../actions/editor'
 import { tick } from '../actions/generic'
 import { MAX_TITLE_LENGTH, MARKS, BLOCKS } from '../constants/editor';
 
+export const allStories = ({ drafts, published, shared }) => [drafts, published, shared ?  shared.map(s => s.drafts).flatten_() : undefined].withoutUndef_().flatten_()
+
 const getDefaultState = () => ({
   title: '',
   content: Value.fromJSON({
@@ -25,8 +27,11 @@ const getDefaultState = () => ({
   link: '',
   tags: [],
   tagsMenuOpen: false,
+  shareDialogOpen: false,
+  userToShareName: '',
   editingTag: '',
   saving: false,
+  owner: true
 })
 
 const updateLastEdit = (oldState, newState) => {
@@ -182,8 +187,28 @@ export default () => createReducer(
       content: Value.fromJSON(JSON.parse(story.content)),
       tags: story.tags,
       lastSave: Date.now(),
+      owner: story.owner
     }),
-    [a.clear]: () => getDefaultState()
+    [a.updateStory]: (state, { title, tags, lastEditTime, content }) => ({
+      ...state,
+      title,
+      tags,
+      lastSave: lastEditTime * 1000,
+      content: Value.fromJSON(JSON.parse(content)),
+    }),
+    [a.clear]: () => getDefaultState(),
+    [a.toggleShareDialog]: state => ({
+      ...state,
+      shareDialogOpen: !state.shareDialogOpen
+    }),
+    [a.share]: state => ({
+      ...state,
+      shareDialogOpen: false
+    }),
+    [a.changeUserToShareName]: (state, userToShareName) => ({
+      ...state,
+      userToShareName
+    })
   },
   getDefaultState()
 )

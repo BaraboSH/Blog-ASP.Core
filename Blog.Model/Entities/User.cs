@@ -22,8 +22,8 @@ namespace Blog.Model.Entities
         [MaxLength(60)]
         public string Email { get; set; }
         public string Password { get; set; }
-        public List<Story> Stories { get; set; }
-        public List<Like> Likes { get; set; }
+        public ICollection<Story> Stories { get; set; }
+        public ICollection<Like> Likes { get; set; }
         public List<Share> Shares { get; set; }
     }
 }

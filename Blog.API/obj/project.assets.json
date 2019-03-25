@@ -12338,11 +12338,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.API\\Blog.API.csproj",
       "projectName": "Blog.API",
       "projectPath": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.API\\Blog.API.csproj",
       "packagesPath": "C:\\Users\\ntre\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ntre\\Desktop\\BlogWithAspAndReact\\Blog-ASP.Core\\Blog.API\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Api\\Blog.API.csproj",
+      "projectName": "Blog.API",
+      "projectPath": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Api\\Blog.API.csproj",
+      "packagesPath": "C:\\Users\\Nikita\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Nikita\\Desktop\\Blog ASP.Core\\Blog.Api\\obj\\",
+>>>>>>> 4444a3893692f5077143faea122b4b6522ac1be8
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
