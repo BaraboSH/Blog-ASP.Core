@@ -131,7 +131,7 @@ namespace Blog.API
                 app.UseHsts();
             }
             app.UseCors(builder => builder
-                .WithOrigins("http://localhost:3000")
+                .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials()
