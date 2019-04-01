@@ -23,7 +23,7 @@ using AutoMapper;
 using Blog.API.ViewModels.Mapping;
 using Blog.API.Notifications;
 using Microsoft.AspNetCore.SignalR;
-
+using React.AspNet;
 namespace Blog.API
 {
     public class Startup
@@ -97,7 +97,8 @@ namespace Blog.API
                     Configuration.GetValue<int>("JWTLifespan")
                 )
             );
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddReact();
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
@@ -122,7 +123,7 @@ namespace Blog.API
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                // app.UseDeveloperExceptionPage();
             }
 
             else 
@@ -136,6 +137,9 @@ namespace Blog.API
                 .AllowCredentials()
             ); 
             app.UseAuthentication();
+            app.UseReact(config => { });
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
             app.UseSignalR(routes => routes.MapHub<NotificationsHub>("/notifications"));
             app.UseMvc();
         }

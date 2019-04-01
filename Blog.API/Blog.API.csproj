@@ -14,6 +14,7 @@
     <PackageReference Include="System.Linq" Version="4.3.0"/>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0"/>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0"/>
+    <PackageReference Include="React.AspNet" Version="4.1.1"/>
     <ProjectReference Include="../Blog.Data\Blog.Data.csproj"/>
     <ProjectReference Include="../Blog.Model\Blog.Model.csproj"/>
   </ItemGroup>
